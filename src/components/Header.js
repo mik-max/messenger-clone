@@ -28,8 +28,47 @@ let Nav = styled.nav`
           font-size: 18px;
           font-weight: 500;
      }
+
+      
+     /* small mobile :320px. */
+     @media (max-width: 767px) {
+          h2{
+               font-size: 18px;
+          }
+          h6{
+               font-size: 16px;
+               font-weight: 700;
+          }
+     
+     }
+     
+     /* Large Mobile :480px. */
+     @media only screen and (min-width: 480px) and (max-width: 767px) {
+          h2{
+               font-size: 19px;
+          }
+          h6{
+               font-size: 16px;
+               font-weight: 700;
+          }
+     }
 `
 let Logo = styled.img`
      width: 70px;
      height: 70px;
+     @media (max-width: 767px) {
+          &{
+               width: 50px;
+               height: 50px;
+          }
+     
+     }
+     
+     /* Large Mobile :480px. */
+     @media only screen and (min-width: 480px) and (max-width: 767px) {
+          &{
+               width: 50px;
+               height: 50px
+          }
+     }
 `
