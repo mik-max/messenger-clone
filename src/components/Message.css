@@ -1,0 +1,14 @@
+.message__guest{
+     padding: 10px;
+     margin: 10px;
+     width: fit-content;
+     background-color: #e9e9eb !important;
+}
+.message__user{
+     padding: 10px;
+     margin: 10px;
+     margin-left: auto;
+     text-align: left !important;
+     background-color: #0b81ff !important;
+     width: fit-content;
+}
