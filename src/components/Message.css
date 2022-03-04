@@ -19,5 +19,24 @@
 }
 .message__typography{
      color: white;
-     font-size: 16px;
+     font-size: 18px !important;
+}
+
+@media (max-width: 767px) {
+     .message__user{
+          padding: 2px 5px;
+     }
+     .message__typography{
+          font-size: 15px;
+     }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+     .message__user{
+          padding: 0px 5px;
+     }
+     .message__typography{
+          font-size: 15px;
+     }
 }
