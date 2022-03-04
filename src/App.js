@@ -116,4 +116,13 @@ const Container = styled.div`
      &::-webkit-scrollbar{
           display: none;
      }
+        /* Tablet desktop :768px. */
+    @media (min-width: 768px) and (max-width: 991px) {
+        height: 85vh;
+    }
+    /* Normal desktop :992px. */
+    @media (min-width: 992px) and (max-width: 1200px) {
+
+      height: 85vh;
+    }
 `

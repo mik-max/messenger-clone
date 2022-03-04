@@ -13,7 +13,7 @@ function Header({user}) {
 export default Header
 let Nav = styled.nav`
      display: flex;
-     background: #2d3436;
+     background: #0E0E10;
      padding: 10px;
      border-bottom: 1px solid #ccc;
      font-weight: 700;

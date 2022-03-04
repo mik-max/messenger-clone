@@ -2,10 +2,10 @@
   padding: 15px;
   position: fixed;
   bottom: 0;
-  background-color: #e9e9eb;
+  background-color: #0E0E10;
   z-index: 10;
   width: 90%;
-  margin: 10px 20px;
+  margin:  10px 0px 10px 5%;
   border-radius: 50px;
 }
 .app__formControl{
@@ -15,7 +15,24 @@
 }
 .app__input{
   flex: 1 !important;
+  color: white !important;
+}
+app__input::placeholder{
+  color: white !important;
 }
 .app__iconButton{
  width: 0 !important;
+}
+
+
+@media (max-width: 767px) {
+  .app__form{
+    width: 95%;
+    margin: 0px 0px 0px 2.5%;
+  }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  
 }
