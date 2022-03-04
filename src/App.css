@@ -1,11 +1,12 @@
 .app__form{
-  padding: 20px;
+  padding: 15px;
   position: fixed;
   bottom: 0;
   background-color: #e9e9eb;
   z-index: 10;
   width: 90%;
-  margin: 20px;
+  margin: 10px 20px;
+  border-radius: 50px;
 }
 .app__formControl{
   display: flex !important;

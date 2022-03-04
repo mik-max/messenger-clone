@@ -1,14 +1,23 @@
 .message__guest{
-     padding: 10px;
-     margin: 10px;
+     padding: 5px 10px !important;
+     border-radius: 50px !important;
+     margin: 20px 15px;
      width: fit-content;
-     background-color: #e9e9eb !important;
+     background-color: #075E54 !important;
+     z-index: 100;
 }
 .message__user{
-     padding: 10px;
-     margin: 10px;
+     padding: 5px 10px !important;
+     border-radius: 50px !important;
+     margin: 20px 15px;
      margin-left: auto;
      text-align: left !important;
-     background-color: #0b81ff !important;
+     background-color: #25D366 !important;
      width: fit-content;
+     min-width: 20%;
+     z-index: 100;
+}
+.message__typography{
+     color: white;
+     font-size: 16px;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { useState, useEffect } from "react";
 import db from "./firebase";
 import { collection, getDocs ,doc, onSnapshot, query, addDoc , orderBy, serverTimestamp } from "firebase/firestore"; 
@@ -6,7 +6,9 @@ import FlipMove from 'react-flip-move';
 import {Button, FormControl, InputLabel, Input } from '@mui/material/';
 import SendIcon from '@mui/icons-material/Send';
 import { IconButton } from '@mui/material';
+import styled from "styled-components";
 import Message from "./components/Message";
+import Header from "./components/Header";
 import './App.css'
 function App() {
   const [input, setInput] = useState('');
@@ -16,6 +18,19 @@ function App() {
     setUsername(prompt('Please Enter Username'))
     
   }, [])
+
+
+  //For scrolling to the button each time the message is updated.
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages]);
+
 
   const userData = async () => {
 
@@ -63,8 +78,8 @@ function App() {
   })
   return (
     <div className="App">
-      <img src = 'https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100' />
-      <h1>Hello {username}</h1>
+       <Header user = {username}/>
+      {/* <h1>Hello {username}</h1> */}
 
       <form className="app__form">
       <FormControl className = 'app__formControl'>
@@ -76,13 +91,17 @@ function App() {
       </FormControl>
       </form>
 
-      <FlipMove>
-        {
-          messages.map(({message, id}) => (
-            <Message username = {username} message = {message} key = {id} />
-          ))
-        }
-      </FlipMove>
+     <Container>
+       
+        <FlipMove>
+            {
+              messages.map(({message, id}) => (
+                <Message username = {username} message = {message} key = {id} />
+              ))
+            }
+        </FlipMove>
+        <div ref={messagesEndRef} />  
+     </Container>
     </div>
   );
 }
@@ -90,3 +109,11 @@ function App() {
 export default App;
 
 
+const Container = styled.div`
+     width: 100%;
+     height: 70vh;
+     overflow: scroll;
+     &::-webkit-scrollbar{
+          display: none;
+     }
+`
