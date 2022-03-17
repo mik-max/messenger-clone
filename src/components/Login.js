@@ -20,7 +20,6 @@ function Login() {
                navigate('/home')
                /* setPhotoUrl(result.user.photoURL);
                setDisplayName(result.user.displayName) */
-             console.log(result)
           })
      }
      useEffect(() =>{

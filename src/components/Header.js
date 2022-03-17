@@ -66,13 +66,27 @@ let Nav = styled.nav`
           }
      
      }
-     
+     @media screen and (max-device-width: 480px) and (orientation: portrait){
+          h2{
+               font-size: 16px;
+          }
+          div.user-div img{
+               width: 30px;
+               height: 30px;
+          }
+          div.user-div h6{
+               font-size: 14px;
+               font-weight: 700;
+          }
+     }
+
      /* Large Mobile :480px. */
      @media only screen and (min-width: 480px) and (max-width: 767px) {
-          h2{
-               font-size: 17px;
+          div.user-div img{
+               width: 40px;
+               height: 40px;
           }
-          h6{
+          div.user-div h6{
                font-size: 16px;
                font-weight: 700;
           }

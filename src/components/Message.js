@@ -7,7 +7,7 @@ const Message = forwardRef(
           const isUserImage = url === message.url;
        return (
          <div ref = {ref}>  
-              <Card className= {isUser ? 'message__user'  : 'message__guest'}>
+              <Card className= {isUserImage ? 'message__user'  : 'message__guest'}>
                    <CardContent>
 
                         {isUserImage? <div className='message__typography'>
