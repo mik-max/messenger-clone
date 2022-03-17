@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
+import Contexts from './Contexts';
+import { logOut } from '../firebase';
 function Header({user}) {
+     const userStatus = useContext(Contexts)
   return (
     <Nav>
           <Logo src = 'https://i.pinimg.com/originals/f5/28/cc/f528cc010d8a9bfcef07d08106976d0f.png' />
-          <h2>Group Chatbot</h2>
-          <h6>Hi {user} </h6>
+          <h2>Whisper Chat</h2>
+          {user && 
+               <div className='user-div'>
+                    <h6>{user}</h6>
+                    <img src ={userStatus.userImage} onClick = {() => {userStatus.signOut(); logOut()}} />
+               </div>
+          }
     </Nav>
   )
 }
@@ -23,19 +31,36 @@ let Nav = styled.nav`
      align-items: center;
      justify-content: space-between;
      color: #f5f5f5;
-     h6{
+     div.user-div{
+          display: flex;
+          align-items: center;
+          justify-content:space-between;
+          padding: 5px 2px;
+     }
+     div.user-div h6{
           color: #3FCA89;
           font-size: 18px;
           font-weight: 500;
+     }
+     div.user-div img{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin: 0 4px;
+          cursor: pointer;
      }
 
       
      /* small mobile :320px. */
      @media (max-width: 767px) {
           h2{
-               font-size: 18px;
+               font-size: 17px;
           }
-          h6{
+          div.user-div img{
+               width: 40px;
+               height: 40px;
+          }
+          div.user-div h6{
                font-size: 16px;
                font-weight: 700;
           }
@@ -45,7 +70,7 @@ let Nav = styled.nav`
      /* Large Mobile :480px. */
      @media only screen and (min-width: 480px) and (max-width: 767px) {
           h2{
-               font-size: 19px;
+               font-size: 17px;
           }
           h6{
                font-size: 16px;
@@ -58,8 +83,8 @@ let Logo = styled.img`
      height: 70px;
      @media (max-width: 767px) {
           &{
-               width: 50px;
-               height: 50px;
+               width: 40px;
+               height: 40px;
           }
      
      }
@@ -67,8 +92,8 @@ let Logo = styled.img`
      /* Large Mobile :480px. */
      @media only screen and (min-width: 480px) and (max-width: 767px) {
           &{
-               width: 50px;
-               height: 50px
+               width: 40px;
+               height: 40px
           }
      }
 `

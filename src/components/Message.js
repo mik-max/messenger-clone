@@ -2,15 +2,20 @@ import React, {forwardRef} from 'react'
 import {Card, CardContent, Typography } from '@mui/material/';
 import './Message.css'
 const Message = forwardRef(
-     ({message, id, username}, ref) => {
+     ({message, id, username, url}, ref) => {
           const isUser = username === message.userName;
+          const isUserImage = url === message.url;
        return (
          <div ref = {ref}>  
               <Card className= {isUser ? 'message__user'  : 'message__guest'}>
                    <CardContent>
-                        <Typography className='message__typography' variant = "h5" component = "h2">
-                        {!isUser && `${message.userName || 'Unknown User'} : `} {message.message}
-                        </Typography>
+
+                        {isUserImage? <div className='message__typography'>
+                              <img src={url} className = 'message__image' /> <div>{message.message}</div>
+                        </div>: <div className='message__typography'>
+                              <img src={message.url} className = 'message__image' /> <div>{message.message}</div>
+                         </div>}
+                         
                    </CardContent>
               </Card>
          </div>
@@ -18,4 +23,5 @@ const Message = forwardRef(
      }
 )
 
-export default Message
+
+export default Message;
