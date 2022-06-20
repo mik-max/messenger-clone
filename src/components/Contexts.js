@@ -7,7 +7,7 @@ const Contexts = createContext({
      status: false,
      userName: '',
      userImage: '',
-})
+});
 
 export function UserSlice (props) {
      const [userActiveStatus, setUserActiveStatus] = useState(false);

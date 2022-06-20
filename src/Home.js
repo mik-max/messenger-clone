@@ -77,7 +77,7 @@ function Home() {
        } catch (e) {
          console.error("Error adding document: ", e);
        }
-         
+          
          setInput('')
      })
      return (
@@ -111,7 +111,7 @@ function Home() {
 
 export default Home;
 
-const Container = styled.div`
+const Container = styled.div`  
      width: 100%;
      height: 70vh;
      overflow: scroll;

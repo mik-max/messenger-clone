@@ -13,7 +13,7 @@ const Message = forwardRef(
                         {isUserImage? <div className='message__typography'>
                               <img src={url} className = 'message__image' /> <div>{message.message}</div>
                         </div>: <div className='message__typography'>
-                              <img src={message.url} className = 'message__image' /> <div>{message.message}</div>
+                              <img src={message.url} className = 'message__image' data-toggle="tooltip" data-placement="top" title={message.userName}  /> <div>{message.message}</div>
                          </div>}
                          
                    </CardContent>

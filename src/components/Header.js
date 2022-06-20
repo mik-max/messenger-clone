@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
 import Contexts from './Contexts';
+import Dashbord from './Contexts'
 import { logOut } from '../firebase';
 function Header({user}) {
      const userStatus = useContext(Contexts)
@@ -11,7 +12,7 @@ function Header({user}) {
           {user && 
                <div className='user-div'>
                     <h6>{user}</h6>
-                    <img src ={userStatus.userImage} onClick = {() => {userStatus.signOut(); logOut()}} />
+                    <img src ={userStatus.userImage} onClick = {() => {userStatus.signOut(); logOut()}} data-toggle="tooltip" data-placement="bottom" title="Log Out" />
                </div>
           }
     </Nav>
